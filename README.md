@@ -7,8 +7,8 @@
 **A modern, dark-themed save editor for the game _How to Fish_.**
 Money, inventory, weapons, skins, journal, boat, islands – everything the save file stores, in one small EXE.
 
-[![Release](https://img.shields.io/github/v/release/Yukitus86/HowToFish-SaveEditor?style=for-the-badge&color=34a8de)](https://github.com/Yukitus86/HowToFish-SaveEditor/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/Yukitus86/HowToFish-SaveEditor/total?style=for-the-badge&color=4ebe70)](https://github.com/Yukitus86/HowToFish-SaveEditor/releases)
+[![Release](https://img.shields.io/github/v/release/Yukitus86/HowToFish-SaveEditor?style=for-the-badge&color=34a8de&label=release)](https://github.com/Yukitus86/HowToFish-SaveEditor/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/Yukitus86/HowToFish-SaveEditor/total?style=for-the-badge&color=4ebe70&label=downloads)](https://github.com/Yukitus86/HowToFish-SaveEditor/releases)
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%20%2F%2011-1c6892?style=for-the-badge&logo=windows)
 ![.NET](https://img.shields.io/badge/.NET-10-512bd4?style=for-the-badge&logo=dotnet)
 [![License](https://img.shields.io/github/license/Yukitus86/HowToFish-SaveEditor?style=for-the-badge&color=e8ac40)](LICENSE)
