@@ -1,0 +1,128 @@
+How to Fish – Steam-Guide (Deutsch)
+===================================
+Zum Einfügen in Steam: Community-Hub → Guides → Guide erstellen.
+Alles zwischen den ###-Markern kommt in das passende Steam-Feld.
+Bilder: im Guide-Editor unter "Bilder" hochladen, dann die Zeile "[BILD: ...]"
+löschen und an der Stelle auf das hochgeladene Bild klicken, um es einzufügen.
+Im Guide die Sprache auf "Deutsch" stellen.
+
+
+### TITEL
+Savegame-Editor – Geld, Inventar, Waffen, Skins & Journal (kostenlos, Open Source)
+
+### BESCHREIBUNG
+Kostenloser Open-Source-Savegame-Editor für How to Fish: Dollar & Euro, Inventar, Waffen-Aufsätze, Köder, Skins, Journal und mehr bearbeiten. Dark Theme, Deutsch & Englisch, automatische Backups.
+
+### KATEGORIE
+Modding oder Konfiguration   (zusätzlich: Grundlagen des Spiels)
+
+### GUIDE-SYMBOL
+docs/icon.png
+
+
+### ABSCHNITT 1 – Überblick
+[h1]How to Fish – Savegame-Editor[/h1]
+
+Ein kleines Windows-Tool, mit dem du alles bearbeiten kannst, was das Spiel in seinen Spielständen speichert – ohne selbst im JSON herumzuwühlen.
+
+[BILD: docs/screenshots/world-de.png]
+
+[list]
+[*][b]Kostenlos & Open Source[/b] – der komplette Quellcode liegt auf GitHub
+[*][b]Eine einzige EXE[/b] – keine Installation, kein .NET nötig
+[*][b]Dark Theme[/b], Oberfläche auf [b]Deutsch[/b] und [b]Englisch[/b]
+[*][b]Automatische Backups[/b] vor jedem Speichern
+[*]Warnt dich, wenn das Spiel noch läuft
+[*]Unbekannte Felder bleiben erhalten – geschrieben wird nur, was du änderst
+[/list]
+
+[quote]Inoffizielles Fan-Projekt, nicht verbunden mit Dazed Games. Spielstände bearbeiten auf eigene Gefahr – der Editor macht Backups, eine eigene Kopie schadet trotzdem nicht.[/quote]
+
+
+### ABSCHNITT 2 – Download
+[h1]Download[/h1]
+
+[b]HowToFishSaveEditor.exe[/b] aus dem neuesten Release laden:
+[url=https://github.com/Yukitus86/HowToFish-SaveEditor/releases/latest]github.com/Yukitus86/HowToFish-SaveEditor/releases/latest[/url]
+
+Quellcode, Screenshots und FAQ:
+[url=https://github.com/Yukitus86/HowToFish-SaveEditor]github.com/Yukitus86/HowToFish-SaveEditor[/url]
+
+[b]Windows SmartScreen[/b] meldet eventuell „Der Computer wurde durch Windows geschützt“, weil die EXE nicht signiert ist. Auf [b]Weitere Informationen → Trotzdem ausführen[/b] klicken.
+
+
+### ABSCHNITT 3 – Benutzung
+[h1]Benutzung[/h1]
+
+[olist]
+[*][b]How to Fish komplett schließen.[/b] Das Spiel speichert automatisch und würde deine Änderungen überschreiben.
+[*][b]HowToFishSaveEditor.exe[/b] starten. Dein Steam-Profil und deine neueste Welt werden automatisch geladen.
+[*]Hast du mehrere Welten, oben rechts die gewünschte auswählen.
+[*]In den Tabs links ändern, was du willst.
+[*]Auf [b]Speichern[/b] klicken (oder [b]Strg+S[/b]).
+[*]Spiel starten und Welt laden.
+[/olist]
+
+Die Oberfläche startet auf Englisch – oben rechts [b]Language → Deutsch[/b] auswählen. Die Einstellung wird gespeichert.
+
+[b]Steam-Cloud-Konflikt?[/b] Fragt Steam, welche Dateien behalten werden sollen, die [b]lokalen[/b] wählen – das sind die bearbeiteten.
+
+
+### ABSCHNITT 4 – Was man bearbeiten kann
+[h1]Was man bearbeiten kann[/h1]
+
+[h2]Welt[/h2]
+Weltname, Schwierigkeit, Spielzeit, [b]Dollar & Euro[/b], höchste / aktuelle Insel, Mini-Insel, Boot, Radar, Motor, Boot-Skin, Grill, Endboss – plus [b]Alles freischalten[/b] mit einem Klick.
+
+[h2]Spieler[/h2]
+Leben, Sättigung, Tutorial, [b]Extra-Inventarplätze (0–5)[/b], [b]Wishbone-Stufe (0–5)[/b] und die Anzahl [b]aller 16 Köder[/b].
+
+[h2]Inventar[/h2]
+Hand + jeder Slot: Item, [b]Skin[/b], Drip / Shiny, Gewicht, Garstufe, Multiplikatoren, [b]Visier, Lauf, Munitionsstufe, erweitertes Magazin, Laser, Köcher, Schärfe[/b] – mit Button [b]Waffe maximieren[/b].
+
+[BILD: docs/screenshots/inventory-de.png]
+
+[h2]Welt-Items[/h2]
+Alles, was auf der Insel oder im Boot herumliegt: bearbeiten, duplizieren, löschen, verschieben.
+
+[h2]Journal[/h2]
+Gefangen- und Drip-Status aller 68 Kreaturen, mit Buttons „Alle gefangen“ / „Alle gefangen + Drip“.
+
+[h2]Skins[/h2]
+Jeden Waffen-, Werkzeug- oder Boot-Skin freischalten – einzeln oder alle auf einmal.
+
+[h2]Charakter[/h2]
+Hut / Outfit / Accessoire, alle 10 Farben, Bean-Modus, Maus invertieren, Spielsprache.
+
+[h2]Raw JSON[/h2]
+Expertenmodus für alles andere, mit Live-Prüfung.
+
+
+### ABSCHNITT 5 – Backups & Wiederherstellen
+[h1]Backups & Wiederherstellen[/h1]
+
+Bei jedem Speichern kopiert der Editor die Originaldateien nach:
+[code]%USERPROFILE%\AppData\LocalLow\Dazed Games\How to Fish\SaveEditorBackups\<SteamID>\<Datum_Uhrzeit>\[/code]
+
+Die Spielstände selbst liegen hier:
+[code]%USERPROFILE%\AppData\LocalLow\Dazed Games\How to Fish\Saves\<SteamID>\[/code]
+
+Zum Zurücksetzen das Spiel schließen und die Dateien aus einem Backup-Ordner in den Spielstand-Ordner kopieren. Im Tab [b]Info[/b] gibt es Buttons, die beide Ordner öffnen.
+
+
+### ABSCHNITT 6 – FAQ
+[h1]FAQ[/h1]
+
+[b]Meine Änderungen sind nach dem Spielstart weg.[/b]
+Das Spiel lief noch und hat drübergespeichert. Spiel schließen, Änderungen nochmal machen, speichern, dann Spiel starten.
+
+[b]Geht das auch im Multiplayer?[/b]
+Welten liegen auf dem PC des Hosts, also muss der Host sie bearbeiten. Jeder Spieler hat einen eigenen Eintrag in der Weltdatei – auswählbar über die Spielerauswahl in den Tabs Spieler / Inventar.
+
+[b]Nach einem Spiel-Update sieht etwas falsch aus.[/b]
+Item-IDs, Skins, Köder und Grenzwerte wurden aus den Spieldateien ausgelesen. Unbekannte Werte werden als „Unbekannt (id)“ angezeigt und unverändert gelassen. Bitte ein Issue auf GitHub aufmachen.
+
+[b]Ist das ein Virus?[/b]
+Nein – der komplette Quellcode ist öffentlich auf GitHub und du kannst die EXE selbst bauen. Die SmartScreen-Warnung kommt nur, weil die Datei nicht signiert ist.
+
+Bug gefunden oder eine Idee? Schreib einen Kommentar hier oder mach ein Issue auf GitHub auf. Viel Spaß beim Angeln! 🎣

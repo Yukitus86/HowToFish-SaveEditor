@@ -1,0 +1,133 @@
+How to Fish – Steam guide (English)
+====================================
+Ready to paste into Steam: Community Hub → Guides → Create a guide.
+Everything between the ### markers goes into the matching Steam field.
+Images: upload them in the guide editor ("Images" tab), then put the cursor at
+an "[IMAGE: ...]" line, delete it and click the uploaded image to insert it.
+
+
+### TITLE
+Save Editor – Money, Inventory, Weapons, Skins & Journal (free, open source)
+
+### DESCRIPTION
+A free, open-source save editor for How to Fish: edit dollars & euros, inventory, weapon attachments, baits, skins, the journal and more. Dark theme, English & German, automatic backups.
+
+### CATEGORY
+Modding or Configuration   (also tick: Gameplay Basics)
+
+### GUIDE ICON
+docs/icon.png
+
+
+### SECTION 1 – Overview
+[h1]How to Fish – Save Editor[/h1]
+
+A small Windows tool that lets you edit everything the game stores in its save files – without fiddling with JSON by hand.
+
+[IMAGE: docs/screenshots/world.png]
+
+[list]
+[*][b]Free & open source[/b] – the full source code is on GitHub
+[*][b]Single EXE[/b] – no installation, no .NET needed
+[*][b]Dark theme[/b], [b]English[/b] and [b]German[/b] UI
+[*][b]Automatic backups[/b] before every save
+[*]Warns you if the game is still running
+[*]Unknown fields are kept – only what you change is written
+[/list]
+
+[quote]This is an unofficial fan project and not affiliated with Dazed Games. Editing saves is at your own risk – the editor makes backups, but keep your own copy too.[/quote]
+
+
+### SECTION 2 – Download
+[h1]Download[/h1]
+
+Get [b]HowToFishSaveEditor.exe[/b] from the latest release:
+[url=https://github.com/Yukitus86/HowToFish-SaveEditor/releases/latest]github.com/Yukitus86/HowToFish-SaveEditor/releases/latest[/url]
+
+Source code, screenshots and FAQ:
+[url=https://github.com/Yukitus86/HowToFish-SaveEditor]github.com/Yukitus86/HowToFish-SaveEditor[/url]
+
+[b]Windows SmartScreen[/b] may say "Windows protected your PC" because the EXE is not code-signed. Click [b]More info → Run anyway[/b].
+
+
+### SECTION 3 – How to use
+[h1]How to use[/h1]
+
+[olist]
+[*][b]Close How to Fish completely.[/b] The game autosaves and would overwrite your changes.
+[*]Start [b]HowToFishSaveEditor.exe[/b]. Your Steam profile and your newest world are loaded automatically.
+[*]Pick another world at the top right if you have more than one.
+[*]Change whatever you like in the tabs on the left.
+[*]Click [b]Save[/b] (or press [b]Ctrl+S[/b]).
+[*]Start the game and load your world.
+[/olist]
+
+Want the German UI? Top right: [b]Language → Deutsch[/b]. The choice is remembered.
+
+[b]Steam Cloud conflict?[/b] If Steam asks which files to keep, choose the [b]local[/b] files – those are the ones you edited.
+
+
+### SECTION 4 – What you can edit
+[h1]What you can edit[/h1]
+
+[h2]World[/h2]
+World name, difficulty, playtime, [b]dollars & euros[/b], highest / current island, mini island, boat, radar, motor, boat skin, grill, final boss – plus a one-click [b]Unlock everything[/b].
+
+[h2]Player[/h2]
+Health, fullness, tutorial, [b]extra inventory slots (0–5)[/b], [b]wishbone level (0–5)[/b] and the amount of [b]all 16 baits[/b].
+
+[IMAGE: docs/screenshots/player.png]
+
+[h2]Inventory[/h2]
+Hand + every slot: item, [b]skin[/b], drip / shiny, weight, cookedness, multipliers, [b]sight, barrel, ammo level, extended mag, laser, quiver, sharpness[/b] – with a [b]Max out weapon[/b] button.
+
+[IMAGE: docs/screenshots/inventory.png]
+
+[h2]World items[/h2]
+Everything lying around on the island or in the boat: edit, duplicate, delete, move.
+
+[h2]Journal[/h2]
+Caught + drip state of all 68 creatures, with "All caught" / "All caught + drip" buttons.
+
+[IMAGE: docs/screenshots/journal.png]
+
+[h2]Skins[/h2]
+Unlock any weapon, tool or boat skin – one by one or all at once.
+
+[IMAGE: docs/screenshots/skins.png]
+
+[h2]Character[/h2]
+Hat / outfit / accessory, all 10 colors, bean mode, mouse invert, game language.
+
+[h2]Raw JSON[/h2]
+Expert mode for everything else, with live validation.
+
+
+### SECTION 5 – Backups & restoring
+[h1]Backups & restoring[/h1]
+
+Every time you save, the editor copies the original files to:
+[code]%USERPROFILE%\AppData\LocalLow\Dazed Games\How to Fish\SaveEditorBackups\<SteamID>\<date_time>\[/code]
+
+The saves themselves are here:
+[code]%USERPROFILE%\AppData\LocalLow\Dazed Games\How to Fish\Saves\<SteamID>\[/code]
+
+To go back, close the game and copy the files from a backup folder into the save folder. The [b]Info[/b] tab has buttons that open both folders.
+
+
+### SECTION 6 – FAQ
+[h1]FAQ[/h1]
+
+[b]My changes are gone after starting the game.[/b]
+The game was still running and autosaved over them. Close the game, redo your changes, save, then start the game.
+
+[b]Does it work in multiplayer?[/b]
+Worlds are stored on the host's PC, so the host has to edit them. Every player has their own entry in the world file – pick it with the player selector on the Player / Inventory tabs.
+
+[b]The game got an update and something looks wrong.[/b]
+Item IDs, skins, baits and limits were read from the game files. Unknown values are shown as "Unknown (id)" and kept as they are. Please open an issue on GitHub.
+
+[b]Is it a virus?[/b]
+No – the complete source code is public on GitHub and you can build the EXE yourself. The SmartScreen warning only appears because the file is not code-signed.
+
+Found a bug or have an idea? Leave a comment here or open an issue on GitHub. Have fun fishing! 🎣
