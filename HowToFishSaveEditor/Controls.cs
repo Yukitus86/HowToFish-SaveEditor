@@ -6,10 +6,12 @@ namespace HowToFishSaveEditor;
 public sealed class FieldGrid : TableLayoutPanel
 {
     private readonly Action _changed;
+    private readonly int _fieldWidth;
 
     public FieldGrid(Action changed, int labelWidth = 185, int fieldWidth = 240)
     {
         _changed = changed;
+        _fieldWidth = fieldWidth;
         ColumnCount = 2;
         AutoSize = true;
         AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -143,7 +145,7 @@ public sealed class FieldGrid : TableLayoutPanel
     {
         var v = J.Obj(o, key);
         var flow = new FlowLayoutPanel { AutoSize = true, WrapContents = false, Margin = Padding.Empty, Padding = Padding.Empty, Height = 30 };
-        int w = (240 - (axes.Length - 1) * 4) / axes.Length;
+        int w = (_fieldWidth - (axes.Length - 1) * 4) / axes.Length;
         foreach (var a in axes)
         {
             var n = FloatBox(v, a, min, max, decimals);

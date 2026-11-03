@@ -70,7 +70,8 @@ public sealed class WorldItemsPage : Page
             var item = J.Obj(wi, "Item", () => J.NewItem(20, 0));
             var stack = Ui.Stack(new ItemEditor(item, WorldChanged, () => _list.Invalidate()));
 
-            var g = new FieldGrid(WorldChanged);
+            // narrower labels, wider fields: same total width as the item editor, room for 4 quaternion boxes
+            var g = new FieldGrid(WorldChanged, 150, 275);
             g.Bool(T("Dead creature", "Tote Kreatur"), wi, "IsDeadCreature", T("Creature lies there dead (otherwise it is alive / flopping).", "Kreatur liegt tot herum (sonst zappelt / lebt sie)."), _ => _list.Invalidate());
             g.Vector("Position", wi, "Position", new[] { "x", "y", "z" }, -100000, 100000, 2);
             g.Vector("Rotation (Quaternion)", wi, "Rotation", new[] { "x", "y", "z", "w" }, -1, 1, 3);

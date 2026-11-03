@@ -78,6 +78,20 @@ public sealed class MainForm : Form
         Load += (_, _) => Init();
     }
 
+    [System.Runtime.InteropServices.DllImport("dwmapi.dll")]
+    private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, ref int value, int size);
+
+    protected override void OnHandleCreated(EventArgs e)
+    {
+        base.OnHandleCreated(e);
+        // Dark title bar (Win10 1809+); caption/border color only on Win11, ignored elsewhere.
+        int on = 1, caption = ColorTranslator.ToWin32(Theme.Side), text = ColorTranslator.ToWin32(Theme.Text);
+        DwmSetWindowAttribute(Handle, 20, ref on, sizeof(int));      // DWMWA_USE_IMMERSIVE_DARK_MODE
+        DwmSetWindowAttribute(Handle, 35, ref caption, sizeof(int)); // DWMWA_CAPTION_COLOR
+        DwmSetWindowAttribute(Handle, 34, ref caption, sizeof(int)); // DWMWA_BORDER_COLOR
+        DwmSetWindowAttribute(Handle, 36, ref text, sizeof(int));    // DWMWA_TEXT_COLOR
+    }
+
     private static Label Caption() => new() { AutoSize = true, ForeColor = Theme.Muted, Margin = new Padding(10, 12, 6, 0) };
 
     private void AddNav(string icon, Func<string> title, bool needsWorld, bool needsLocal, Func<SaveContext, Page> create)
@@ -234,8 +248,12 @@ public sealed class MainForm : Form
 
         void Shot(string name)
         {
-            using var bmp = new Bitmap(ClientSize.Width, ClientSize.Height);
-            DrawToBitmap(bmp, new Rectangle(Point.Empty, ClientSize));
+            // DrawToBitmap renders the whole window incl. a classic frame – crop to the client area.
+            using var full = new Bitmap(Width, Height);
+            DrawToBitmap(full, new Rectangle(Point.Empty, Size));
+            var origin = PointToScreen(Point.Empty);
+            var client = new Rectangle(origin.X - Left, origin.Y - Top, ClientSize.Width, ClientSize.Height);
+            using var bmp = full.Clone(client, full.PixelFormat);
             bmp.Save(Path.Combine(ShotsDir, name + ".png"));
         }
 
